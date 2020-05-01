@@ -1,0 +1,47 @@
+{
+	"name": "javanile/vtiger-core-installer",
+	"description": "A custom installer to handle deploying vtiger with composer",
+	"keywords": [
+		"vtiger"
+	],
+	"type": "composer-plugin",
+	"license": "GPL-2.0-or-later",
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"authors": [
+		{
+			"name": "John P. Bloch",
+			"email": "me@javanile.com"
+		}
+	],
+	"autoload": {
+		"psr-0": {
+			"javanile\\Composer\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Tests\\javanile\\Composer\\": "tests/"
+		}
+	},
+	"extra": {
+		"class": "javanile\\Composer\\vtigerCorePlugin"
+	},
+	"require": {
+		"composer-plugin-api": "^1.0 || ^2.0",
+		"php": ">=5.6.0"
+	},
+	"require-dev": {
+		"composer/composer": "^1.0 || ^2.0",
+		"phpunit/phpunit": ">=5.7.27"
+	},
+	"conflict": {
+		"composer/installers": "<1.0.6"
+	},
+	"scripts": {
+		"test:phpunit": "phpunit",
+		"test": [
+			"@test:phpunit"
+		]
+	}
+}
